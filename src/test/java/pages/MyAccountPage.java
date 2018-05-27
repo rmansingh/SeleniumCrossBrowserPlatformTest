@@ -29,4 +29,8 @@ public class MyAccountPage extends HomePage {
         return driver.getCurrentUrl().contains(url);
     }
 
+    public void navigateMenu(String menuItem) {
+        if(menuItem.equalsIgnoreCase("women"))
+            waitForVisibilityOf(menuitemWomen).click();
+    }
 }

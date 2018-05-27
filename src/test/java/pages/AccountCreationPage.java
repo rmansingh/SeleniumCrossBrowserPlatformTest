@@ -12,63 +12,63 @@ public class AccountCreationPage extends HomePage {
 
     public static final Logger log = Logger.getLogger(AccountCreationPage.class.getName());
 
-    @FindBy(id="id_gender2")
+    @FindBy(id = "id_gender2")
     public WebElement radioTitle;
 
-    @FindBy(id="customer_firstname")
+    @FindBy(id = "customer_firstname")
     public WebElement txtFirstName;
 
-    @FindBy(id="customer_lastname")
+    @FindBy(id = "customer_lastname")
     public WebElement txtlastName;
 
-    @FindBy(id="passwd")
+    @FindBy(id = "passwd")
     public WebElement txtPassword;
 
-    @FindBy(id="days")
+    @FindBy(id = "days")
     public WebElement dropdownDays;
 
-    @FindBy(id="months")
+    @FindBy(id = "months")
     public WebElement dropdownMonths;
 
-    @FindBy(id="years")
+    @FindBy(id = "years")
     public WebElement dropdownYears;
 
-    @FindBy(id="company")
+    @FindBy(id = "company")
     public WebElement txtCompany;
 
-    @FindBy(id="address1")
+    @FindBy(id = "address1")
     public WebElement txtAddress1;
 
-    @FindBy(id="address2")
+    @FindBy(id = "address2")
     public WebElement txtAddress2;
 
-    @FindBy(id="city")
+    @FindBy(id = "city")
     public WebElement txtCity;
 
-    @FindBy(id="id_state")
+    @FindBy(id = "id_state")
     public WebElement dropdownState;
 
-    @FindBy(id="postcode")
+    @FindBy(id = "postcode")
     public WebElement txtZipCode;
 
-    @FindBy(id="other")
+    @FindBy(id = "other")
     public WebElement txtAdditionalInformation;
 
-    @FindBy(id="phone")
+    @FindBy(id = "phone")
     public WebElement txtPhone;
 
-    @FindBy(id="phone_mobile")
+    @FindBy(id = "phone_mobile")
     public WebElement txtMobile;
 
-    @FindBy(id="alias")
+    @FindBy(id = "alias")
     public WebElement txtAlias;
 
-    @FindBy(id="submitAccount")
+    @FindBy(id = "submitAccount")
     public WebElement btnSubmitAccount;
 
     public AccountCreationPage(WebDriver driver) {
         super(driver);
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
     }
 
     public void enterDateOfBirth(String days, String months, String years) {
@@ -92,4 +92,55 @@ public class AccountCreationPage extends HomePage {
         return new MyAccountPage(driver);
     }
 
+    public void enterValue(WebElement e, String v) {
+        e.sendKeys(v);
+    }
+
+    public void enterFirstName(String name) {
+        txtFirstName.sendKeys(name);
+    }
+
+    public void enterLastName(String surname) {
+        txtlastName.sendKeys(surname);
+    }
+
+    public void enterPassword(String pass) {
+        txtPassword.sendKeys(pass);
+    }
+
+    public void enterCompany(String company) {
+        txtCompany.sendKeys(company);
+    }
+
+    public void enterAddress1(String s) {
+        txtAddress1.sendKeys(s);
+    }
+
+    public void enterAddress2(String addr) {
+        txtAddress2.sendKeys(addr);
+    }
+
+    public void enterCity(String qwerty) {
+        txtCity.sendKeys(qwerty);
+    }
+
+    public void enterZipCode(String s) {
+        txtZipCode.sendKeys(s);
+    }
+
+    public void enterAdditionalInfo(String s) {
+        txtAdditionalInformation.sendKeys(s);
+    }
+
+    public void enterPhone(String s) {
+        txtPhone.sendKeys(s);
+    }
+
+    public void enterMobile(String s) {
+        txtMobile.sendKeys(s);
+    }
+
+    public void enterAlias(String hf) {
+        txtAlias.sendKeys(hf);
+    }
 }

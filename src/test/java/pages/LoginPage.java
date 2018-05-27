@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import utility.JSUtility;
 
 public class LoginPage extends HomePage {
 
@@ -33,7 +34,7 @@ public class LoginPage extends HomePage {
     public AccountCreationPage createAccount(String email){
         log("Entering email for new account and submitting.");
         txtNewEmail.sendKeys(email);
-        btnCreateAccount.click();
+        JSUtility.scrollIntoViewClick(btnCreateAccount,driver);
         return new AccountCreationPage(driver);
     }
 

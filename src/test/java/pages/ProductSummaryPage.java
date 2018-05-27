@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import utility.JSUtility;
 
 public class ProductSummaryPage extends HomePage{
 
@@ -25,7 +26,7 @@ public class ProductSummaryPage extends HomePage{
 
     public void addToCart(){
         log("Adding product to cart.");
-        waitForVisibilityOf(btnSubmit).click();
+        JSUtility.scrollIntoViewClick(waitForVisibilityOf(btnSubmit),driver);
     }
 
 }

@@ -1,4 +1,9 @@
 /target
 /test-output
 /.idea
+
+#Ignoring the updates in log file
 automation.out
+
+#Ignoring all the screenshot from failed test cases
+/src/test/resources/failure_screencaptures

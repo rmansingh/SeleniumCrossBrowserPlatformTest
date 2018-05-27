@@ -2,6 +2,7 @@ package com.hf.test;
 
 import base.BaseClass;
 import org.apache.log4j.Logger;
+import org.json.JSONObject;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 import pages.*;
@@ -14,11 +15,17 @@ public class CheckoutTest extends BaseClass {
     //Logging method so that the same log is added in logger as well as in TestNG Report
     public void log(String data) {
         log.info(data);
-        Reporter.log(data+"\n");
+        Reporter.log(data);
     }
     @Test
     public void checkoutTest() {
         log("------------------- Starting CheckoutTest Test -------------------");
+
+        /*Getting Test Data from JSON File*/
+        log("Getting test data from json file.");
+        JSONObject testData = getTestData();
+        log("Parsed test data is as follows: " + testData.toString());
+        /*--------------------------------*/
 
         HomePage homePage = new HomePage(driver);
         waitForVisibilityOf(homePage.btnLogin);
@@ -26,7 +33,7 @@ public class CheckoutTest extends BaseClass {
         MyAccountPage myAccountPage = loginPage.login(existingUserEmail,existingUserPassword);
 
         log("Navigating to Women category product list.");
-        waitForVisibilityOf(myAccountPage.menuitemWomen).click();
+        myAccountPage.navigateMenu("women");
         ProductListPage productList = new ProductListPage(driver);
         ProductSummaryPage productSummaryPage = productList.gotoFirstProduct();
         productSummaryPage.addToCart();
