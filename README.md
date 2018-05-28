@@ -1,21 +1,21 @@
 # Home test task
 
-I have provided the updated version of automated web test suite.
-Total execution time for all 3 test cases reduced by 17 seconds.
-It is having all the required 10 updates as requested in the initial README.md document.
+<br/>I have provided the updated version of automated web test suite.
+<br/>Total execution time for all 3 test cases reduced by 17 seconds.
+<br/>It is having all the required 10 updates as requested in the initial README.md document.
 
 # Libraries Used
 
 * Selenium:
-    To incorporate web tests.
+    * To incorporate web tests.
 * TestNG:
-    To perform parallel exection of test.
-    To perform cross browser/platform test.
-    To generate human readable report.
+    * To perform parallel exection of test.
+    * To perform cross browser/platform test.
+    * To generate human readable report.
 * Log4J:
-    To perform logging across test application for all test cases on output stream and in a file.
+    * To perform logging across test application for all test cases on output stream and in a file.
 * Org.JSON:
-    To parse the json file and retrieve the test data for "Checkout" test case.
+    * To parse the json file and retrieve the test data for "Checkout" test case.
 
 # Solution includes the following:
 
@@ -30,8 +30,7 @@ It is having all the required 10 updates as requested in the initial README.md d
 * Generating random values for insignificant test data, for example, for new user
     - Used a "TestDataGenerator" class in the utiltity package for filling random values in "SignTest" for new user.
 * WebDriver factory
-    - WebDriverFactory class is added as part of base package to enable WebDriver initialization for
-    cross browser and platform test.
+    - WebDriverFactory class is added as part of base package to enable WebDriver initialization for cross browser and platform test.
 * Encapsulation layers like test data, logic of tests, actions on web pages and so on
     - PageFactory design pattern is used to have a clean separation of layers consisting of test data, logic
     and actions on web pages.
@@ -48,7 +47,7 @@ It is having all the required 10 updates as requested in the initial README.md d
 # Steps to execute the project:
 
 * Method 1: Command Line:
-    Execute via command line by entering following command.
-    clean test -Durl="http://automationpractice.com/index.php"
+    * Execute via command line by entering following command.
+    <br/>clean test -Durl="http://automationpractice.com/index.php"
 * Method 2: TestNG file:
-    Execute via the testng xml and the test cases will run and produce the report.
+    * Execute via the testng xml and the test cases will run and produce the report.
