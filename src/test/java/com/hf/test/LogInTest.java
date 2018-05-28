@@ -11,6 +11,10 @@ import pages.MyAccountPage;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
+/**
+ * @Author: Sahil Mutreja
+ * @Desc: Test case to validate log in activity
+ */
 public class LogInTest extends BaseClass {
 
     @Test()

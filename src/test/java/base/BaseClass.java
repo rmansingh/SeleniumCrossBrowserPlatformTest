@@ -9,7 +9,6 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.io.FileHandler;
-import org.openqa.selenium.json.JsonOutput;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
@@ -24,6 +23,10 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * @Author: Sahil Mutreja
+ * @Desc: Base class provides all the members & functions to be made visible for test classes and page objects
+ */
 public class BaseClass {
 
     public WebDriver driver;
@@ -37,25 +40,23 @@ public class BaseClass {
     @BeforeClass
     @Parameters({"browser", "os"})
     public void setUp(@Optional("chrome") String browser, @Optional("windows") String os) {
-        // Getting all the environment variables and setting default values
-        log("Getting all the environment variables.");
+        /*Initializing log4j.*/
+        String log4jConfPath = "log4j.properties";
+        PropertyConfigurator.configure(log4jConfPath);
+
+        log("Getting url environment variable and setting default value.");
         String url = System.getProperty("url", "http://automationpractice.com/index.php");
 
         log("Initializing webdriver.");
         this.browser = browser;
         this.os = os;
-        driver = WebDriverFactory.init(driver, browser, os);
+        driver = WebDriverFactory.init(browser, os);
         driver.manage().window().maximize();
 
         log("Navigating to Home page.");
         driver.get(url);
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         wait = new WebDriverWait(driver, 10, 50);
-
-        // Initializing log4j
-        log("Initializing log4j.");
-        String log4jConfPath = "log4j.properties";
-        PropertyConfigurator.configure(log4jConfPath);
     }
 
     @AfterClass(alwaysRun = true)
@@ -80,9 +81,6 @@ public class BaseClass {
 
     /**
      * Method used for getting the screen capture with the name in a particular format
-     *
-     * @param name
-     * @param method
      * @param methodName
      */
     public void takeScreenShot(String methodName) {
@@ -113,8 +111,7 @@ public class BaseClass {
     }
 
     /**
-     * Common method to wait for visibility of elements on in test clases
-     *
+     * Common method to wait for visibility of elements in all test classes
      * @param element
      * @return
      */

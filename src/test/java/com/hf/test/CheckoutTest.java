@@ -10,19 +10,18 @@ import pages.*;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
+/**
+ * @Author: Sahil Mutreja
+ * @Desc: Test case to validate product check out activity
+ */
 public class CheckoutTest extends BaseClass {
-    public static final Logger log = Logger.getLogger(CheckoutTest.class.getName());
-    //Logging method so that the same log is added in logger as well as in TestNG Report
-    public void log(String data) {
-        log.info(data);
-        Reporter.log(data);
-    }
+
     @Test
     public void checkoutTest() {
         log("------------------- Starting CheckoutTest Test -------------------");
 
-        /*Getting Test Data from JSON File*/
-        log("Getting test data from json file.");
+        /* Getting Test Data from JSON File which can be used in this test case */
+        log("Getting Test Data from JSON File which can be used in this test case.");
         JSONObject testData = getTestData();
         log("Parsed test data is as follows: " + testData.toString());
         /*--------------------------------*/

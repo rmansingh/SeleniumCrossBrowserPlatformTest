@@ -14,8 +14,11 @@ import java.util.Date;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
+/**
+ * @Author: Sahil Mutreja
+ * @Desc: Test case to validate new user sign in activity
+ */
 public class SignInTest extends BaseClass {
-    public static final Logger log = Logger.getLogger(SignInTest.class.getName());
 
     @Test()
     public void signInTest() {

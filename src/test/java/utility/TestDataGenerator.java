@@ -1,5 +1,9 @@
 package utility;
 
+/**
+ * @Author: Sahil Mutreja
+ * Desc: TestDataGenerator class provides functionality to produce random alphanumberic strings
+ */
 public class TestDataGenerator {
     public enum ValueType{ALPHABET,NUMBER,ALPHANUMERIC}
     public static String randomAlphaNumeric(int count, ValueType valueType) {

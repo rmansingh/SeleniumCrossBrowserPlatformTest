@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<!--Executing the test cases in parallel with max thread count of 3-->
 <suite name="HelloFresh Web Test Suite" parallel="classes" thread-count="3">
     <test name="Chrome Test on Windows">
+
+        <!--Parameters for running test in different browser and os-->
         <parameter name="browser" value="chrome"/>
         <parameter name="os" value="windows"/>
+
         <classes>
             <class name="com.hf.test.SignInTest"/>
             <class name="com.hf.test.LogInTest"/>
             <class name="com.hf.test.CheckoutTest"/>
         </classes>
     </test>
+
+    <!--To Execute the cases on other browser and operating system just uncomment the following code -->
 <!--    <test name="Firefox Test on Windows">
         <parameter name="browser" value="firefox"/>
         <parameter name="os" value="windows"/>

@@ -5,10 +5,16 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+/**
+ * @Author: Sahil Mutreja
+ * Desc: JSUtility class provides functionality where JS is used to perform UI interaction
+ */
 public class JSUtility {
 
     /**
-     * @param webElement is the element which will be scrolled into view and clicked
+     * Function to scroll and click the element via JS.
+     * @param element is the element which will be scrolled into view and clicked
+     * @param driver
      */
     public static void scrollIntoViewClick(WebElement element,WebDriver driver) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -16,15 +22,5 @@ public class JSUtility {
         js.executeScript("arguments[0].click();", element);
     }
 
-    /**
-     * @param weElement
-     *            is the element which will be scrolled into view and clicked
-     */
-    public static void scrollToClickWebElement(WebElement weElement,WebDriver driver) {
-        // Scroll the browser to the element's Y position
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollTo(0," + weElement.getLocation().x + ")");
-        weElement.click();
-    }
 
 }

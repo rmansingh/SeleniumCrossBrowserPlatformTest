@@ -10,8 +10,6 @@ import org.openqa.selenium.support.ui.Select;
 
 public class AccountCreationPage extends HomePage {
 
-    public static final Logger log = Logger.getLogger(AccountCreationPage.class.getName());
-
     @FindBy(id = "id_gender2")
     public WebElement radioTitle;
 

@@ -1,21 +1,17 @@
 package base;
 
-import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.firefox.GeckoDriverService;
-import org.openqa.selenium.remote.CapabilityType;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
 
-import java.net.URL;
-import java.security.DigestException;
-
+/**
+ * @Author: Sahil Mutreja
+ * @Desc: WebDriverFactory provides init method to initialize WebDriver for different os and browser combination
+ */
 public class WebDriverFactory {
 
-    public static WebDriver init(WebDriver driver, String browser, String os) {
+    public static WebDriver init(String browser, String os) {
         return Browser.valueOf(browser.toUpperCase()).getDriver(os);
     }
 

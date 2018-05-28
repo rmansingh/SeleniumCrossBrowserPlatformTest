@@ -11,8 +11,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HomePage extends BaseClass{
 
-    private static final Logger log = Logger.getLogger(HomePage.class.getName());
-
     protected WebDriver driver;
     protected WebDriverWait wait;
 
