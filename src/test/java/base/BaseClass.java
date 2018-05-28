@@ -122,7 +122,6 @@ public class BaseClass {
         return wait.until(ExpectedConditions.visibilityOf(element));
     }
 
-
     /**
      * Function to parse test data from the json file
      */
@@ -138,6 +137,5 @@ public class BaseClass {
         }
         return testData;
     }
-
 
 }

@@ -5,17 +5,17 @@
         <parameter name="browser" value="chrome"/>
         <parameter name="os" value="windows"/>
         <classes>
-            <class name="com.hf.test.LogInTest"/>
             <class name="com.hf.test.SignInTest"/>
+            <class name="com.hf.test.LogInTest"/>
             <class name="com.hf.test.CheckoutTest"/>
         </classes>
     </test>
-    <!--<test name="Firefox Test on Windows">
+<!--    <test name="Firefox Test on Windows">
         <parameter name="browser" value="firefox"/>
         <parameter name="os" value="windows"/>
         <classes>
-            <class name="com.hf.test.LogInTest"/>
             <class name="com.hf.test.SignInTest"/>
+            <class name="com.hf.test.LogInTest"/>
             <class name="com.hf.test.CheckoutTest"/>
         </classes>
     </test>
@@ -23,9 +23,9 @@
         <parameter name="browser" value="chrome"/>
         <parameter name="os" value="mac"/>
         <classes>
-            <class name="com.hf.test.LogInTest"/>
             <class name="com.hf.test.SignInTest"/>
+            <class name="com.hf.test.LogInTest"/>
             <class name="com.hf.test.CheckoutTest"/>
         </classes>
-    </test>-->
+    </test> -->
 </suite>

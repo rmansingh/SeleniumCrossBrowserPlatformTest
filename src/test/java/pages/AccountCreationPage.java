@@ -82,8 +82,9 @@ public class AccountCreationPage extends HomePage {
     }
 
     public void enterState(String state) {
+        state = state=="0"?"1":state;
         Select select = new Select(dropdownState);
-        select.selectByVisibleText(state);
+        select.selectByValue(state);
     }
 
     public MyAccountPage submitAccountDetails() {

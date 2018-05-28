@@ -7,6 +7,7 @@ import pages.AccountCreationPage;
 import pages.HomePage;
 import pages.LoginPage;
 import pages.MyAccountPage;
+import utility.TestDataGenerator;
 
 import java.util.Date;
 
@@ -24,25 +25,31 @@ public class SignInTest extends BaseClass {
         LoginPage loginPage = homePage.gotoLoginPage();
         String timestamp = String.valueOf(new Date().getTime());
         String email = "hf_challenge_" + timestamp + "@hf" + timestamp.substring(7) + ".com";
-        String name = "Firstname";
-        String surname = "Lastname";
+
         AccountCreationPage accountCreationPage = loginPage.createAccount(email);
         log("Entering personal information.");
         waitForVisibilityOf(accountCreationPage.radioTitle).click();
+
+        /*Entering Random values in the form using TestDataGenerator class*/
+        TestDataGenerator.ValueType alphabet = TestDataGenerator.ValueType.ALPHABET;
+        TestDataGenerator.ValueType number = TestDataGenerator.ValueType.NUMBER;
+        TestDataGenerator.ValueType alphanumeric = TestDataGenerator.ValueType.ALPHANUMERIC;
+        String name = TestDataGenerator.randomAlphaNumeric(5,alphabet);
+        String surname = TestDataGenerator.randomAlphaNumeric(5,alphabet);
         accountCreationPage.enterFirstName(name);
         accountCreationPage.enterLastName(surname);
-        accountCreationPage.enterPassword("Qwerty");
+        accountCreationPage.enterPassword(TestDataGenerator.randomAlphaNumeric(5,alphanumeric));
         accountCreationPage.enterDateOfBirth("1", "1", "2000");
-        accountCreationPage.enterCompany("Company");
-        accountCreationPage.enterAddress1("Qwerty, 123");
-        accountCreationPage.enterAddress2("zxcvb");
-        accountCreationPage.enterCity("Qwerty");
-        accountCreationPage.enterState("Colorado");
-        accountCreationPage.enterZipCode("12345");
-        accountCreationPage.enterAdditionalInfo("Qwerty");
-        accountCreationPage.enterPhone("12345123123");
-        accountCreationPage.enterMobile("12345123123");
-        accountCreationPage.enterAlias("hf");
+        accountCreationPage.enterCompany(TestDataGenerator.randomAlphaNumeric(5,alphabet));
+        accountCreationPage.enterAddress1(TestDataGenerator.randomAlphaNumeric(10,alphabet));
+        accountCreationPage.enterAddress2(TestDataGenerator.randomAlphaNumeric(5,alphabet));
+        accountCreationPage.enterCity(TestDataGenerator.randomAlphaNumeric(6,alphabet));
+        accountCreationPage.enterState(TestDataGenerator.randomAlphaNumeric(1,number));
+        accountCreationPage.enterZipCode(TestDataGenerator.randomAlphaNumeric(5,number));
+        accountCreationPage.enterAdditionalInfo(TestDataGenerator.randomAlphaNumeric(5,number));
+        accountCreationPage.enterPhone(TestDataGenerator.randomAlphaNumeric(11,number));
+        accountCreationPage.enterMobile(TestDataGenerator.randomAlphaNumeric(11,number));
+        accountCreationPage.enterAlias(TestDataGenerator.randomAlphaNumeric(3,alphabet));
         MyAccountPage myAccountPage = accountCreationPage.submitAccountDetails();
         waitForVisibilityOf(myAccountPage.lblHeading);
 
