@@ -1,8 +1,8 @@
-# Home test task
+# Web Automation Test Suite
 
-<br/>I have provided the updated version of automated web test suite.
-<br/>Total execution time for all 3 test cases reduced by 17 seconds.
-<br/>It is having all the required 10 updates as requested in the initial README.md document.
+<br/>This automated web test suite covers all the test cases mentioned in [TestCases.md](https://github.com/sahilmutreja/SeleniumCrossBrowserPlatformTest/blob/master/TESTCASES.md) file.
+<br/>I have designed the test suite with all possible optimizations as mentioned in the [Features](#features) sections: 
+<br/>Total execution time for all 3 test cases is 01:04 mins.
 
 # Libraries Used
 
@@ -17,7 +17,7 @@
 * Org.JSON:
     * To parse the json file and retrieve the test data for "Checkout" test case.
 
-# Solution includes the following:
+# Features:
 
 * Logging
     - Implemented using Log4J to log at 2 destinations:
